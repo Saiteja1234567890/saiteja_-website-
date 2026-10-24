@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saiteja Website | JEE Master 2027</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#647089;--blue:#3457eb;--line:#e5e9f2;--green:#16865b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#152a72,#4266f5);color:white;padding:26px 18px 22px}
+.wrap{max-width:1050px;margin:auto}header .top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:850;font-size:1.35rem;letter-spacing:-.5px}.pill{border:1px solid #ffffff66;border-radius:99px;padding:7px 11px;font-size:.78rem}
+h1{font-size:clamp(1.7rem,5vw,2.65rem);margin:25px 0 8px;letter-spacing:-1px}header p{color:#e2e8ff;max-width:680px;line-height:1.55;margin:0}
+main{max-width:1050px;margin:22px auto;padding:0 16px 40px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:0 4px 16px #17203308}
+.stat strong{display:block;font-size:1.5rem}.stat span{font-size:.83rem;color:var(--muted)}
+nav{display:flex;gap:8px;overflow:auto;padding:5px 0 15px}.tab{border:1px solid var(--line);background:white;border-radius:10px;padding:10px 14px;white-space:nowrap;font-weight:700;color:#47516b;cursor:pointer}.tab.active{background:var(--blue);border-color:var(--blue);color:white}
+.panel h2{margin:0 0 7px;font-size:1.22rem}.muted{color:var(--muted);font-size:.9rem;line-height:1.5}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.row select,.row input{padding:11px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);min-width:140px;flex:1}
+.btn{border:0;border-radius:10px;background:var(--blue);color:white;font-weight:750;padding:11px 15px;cursor:pointer}.btn.secondary{background:#edf1ff;color:#2945c7}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:13px}.qcard{border:1px solid var(--line);border-radius:13px;padding:15px}.tag{font-size:.74rem;font-weight:800;background:#eef2ff;color:#3048bd;border-radius:99px;padding:5px 8px;display:inline-block;margin:0 5px 8px 0}
+.question{font-weight:700;line-height:1.5;margin:7px 0 12px}.options{display:grid;gap:8px}.option{padding:10px;border:1px solid var(--line);border-radius:9px;text-align:left;background:white;cursor:pointer;color:var(--ink)}.option:hover{border-color:var(--blue)}.option.correct{background:#e9f8f0;border-color:#78c9a2}.option.wrong{background:#fff0f0;border-color:#e5a0a0}.feedback{font-size:.88rem;margin-top:10px;font-weight:700}
+table{border-collapse:collapse;width:100%;margin-top:12px;font-size:.91rem}th,td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-size:.8rem}
+.bar{height:7px;border-radius:9px;background:#e9edfa;overflow:hidden;min-width:60px}.bar i{display:block;height:100%;background:var(--blue)}
+.notice{border-left:4px solid #f2b84b;background:#fff9e9;padding:12px 14px;border-radius:8px;color:#755316;font-size:.86rem;line-height:1.5;margin-top:14px}
+.hidden{display:none}.empty{padding:24px;text-align:center;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:22px}
+@media(max-width:650px){.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}.cards{grid-template-columns:1fr}main{padding-left:12px;padding-right:12px}.panel{padding:14px}}
+</style>
+<meta name="theme-color" content="#152a72">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+</head>
+<body>
+<header><div class="wrap">
+ <div class="top"><div class="brand">✦ Saiteja Website</div><span class="pill">JEE MASTER 2027</span></div>
+ <h1>Prepare smart. Practice daily.</h1>
+ <p>Previous-year practice, chapter insights and exam-style questions for JEE Main 2027 — all in one place.</p>
+</div></header>
+<main>
+ <section class="stats">
+  <div class="stat"><strong>2020–2026</strong><span>Year filters planned</span></div>
+  <div class="stat"><strong>3 subjects</strong><span>Physics · Chemistry · Maths</span></div>
+  <div class="stat"><strong id="score">0 / 0</strong><span>Prototype practice score</span></div>
+ </section>
+ <nav aria-label="Main navigation">
+  <button class="tab active" data-tab="practice">Practice questions</button>
+  <button class="tab" data-tab="weightage">Chapter weightage</button>
+  <button class="tab" data-tab="prediction">2027 practice set</button>
+  <button class="tab" data-tab="about">About & earning</button>
+ </nav>
+ <section id="practice" class="panel">
+  <h2>Previous-year style practice</h2><p class="muted">This demo includes sample questions to show how the website works. The sample questions are not a verified complete PYQ archive.</p>
+  <div class="row">
+   <select id="subject"><option>All subjects</option><option>Physics</option><option>Chemistry</option><option>Mathematics</option></select>
+   <select id="year"><option>All years</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select>
+   <input id="search" placeholder="Search chapter or keyword">
+  </div>
+  <div id="questions" class="cards"></div>
+ </section>
+ <section id="weightage" class="panel hidden">
+  <h2>Chapter-wise weightage</h2><p class="muted">Illustrative priority guide only, not verified year-by-year question counts. Replace with a sourced analysis of official papers before publishing.</p>
+  <div class="row"><select id="weightSubject"><option>Physics</option><option>Chemistry</option><option>Mathematics</option></select></div>
+  <div id="weights"></div>
+  <div class="notice">Weightage changes by shift and year. Use this to plan revision, not as a promise that a chapter will appear.</div>
+ </section>
+ <section id="prediction" class="panel hidden">
+  <h2>JEE Main 2027 practice set</h2><p class="muted">These are original exam-style practice questions based on core concepts, not guaranteed predictions of the actual exam.</p>
+  <div id="predictions" class="cards"></div>
+ </section>
+ <section id="about" class="panel hidden">
+  <h2>About this prototype</h2>
+  <p class="muted">JEE Master 2027 is a front-end demo. It works locally in your browser and currently saves no accounts or cloud data.</p>
+  <h3>How this website could earn later</h3>
+  <ul class="muted"><li>Display ads after meeting the ad network's approval and policy requirements.</li><li>Offer optional premium mock tests or detailed solutions.</li><li>Sell original notes or study packs, with clear pricing and refund terms.</li></ul>
+  <div class="notice">Earning is not guaranteed. Before launch, add real verified questions, citations/sources, privacy policy, terms, and any required permissions. Don't copy paid question banks or claim sample questions are official PYQs.</div>
+  <p><button class="btn" onclick="window.print()">Print / Save as PDF</button></p>
+ </section>
+</main>
+<footer>JEE Master 2027 · Learning prototype · Not affiliated with NTA</footer>
+<script>
+const qs=[
+ {s:"Physics",y:2024,c:"Electrostatics",q:"Two equal positive charges are separated by distance r. If the distance is doubled, the electrostatic force becomes:",o:["F/4","F/2","2F","4F"],a:0,e:"By Coulomb's law, force is inversely proportional to the square of distance."},
+ {s:"Chemistry",y:2023,c:"Chemical Equilibrium",q:"For a reaction at equilibrium, the reaction quotient Q is:",o:["Always zero","Equal to K","Always greater than K","Equal to one for every reaction"],a:1,e:"At equilibrium, Q = K at that temperature."},
+ {s:"Mathematics",y:2022,c:"Limits",q:"Evaluate lim x→0 (sin x)/x:",o:["0","1","−1","Does not exist"],a:1,e:"This is a standard trigonometric limit (angles in radians)."},
+ {s:"Physics",y:2021,c:"Current Electricity",q:"A 6 Ω resistor is connected across an ideal 12 V source. Current through it is:",o:["0.5 A","2 A","6 A","72 A"],a:1,e:"Ohm's law: I = V/R = 12/6 = 2 A."},
+ {s:"Chemistry",y:2025,c:"Atomic Structure",q:"The maximum number of electrons in a shell with principal quantum number n is:",o:["n²","2n²","2n","n³"],a:1,e:"The maximum shell capacity is 2n²."},
+ {s:"Mathematics",y:2020,c:"Matrices",q:"If A is a 2 × 3 matrix and B is a 3 × 4 matrix, the order of AB is:",o:["2 × 4","3 × 3","4 × 2","2 × 3"],a:0,e:"The inner dimensions match; the product has the outer dimensions 2 × 4."},
+ {s:"Physics",y:2026,c:"Modern Physics",q:"The energy of a photon of frequency ν is:",o:["h/ν","hν","ν/h","mc"],a:1,e:"Planck's relation gives photon energy E = hν."}
+];
+const pred=[
+ {s:"Chemistry",c:"Equilibrium",q:"For a weak acid HA in water, which expression defines its acid dissociation constant?",o:["[HA]/([H⁺][A⁻])","[H⁺][A⁻]/[HA]","[H⁺]+[A⁻]","[HA][A⁻]/[H⁺]"],a:1,e:"For HA ⇌ H⁺ + A⁻, Ka = [H⁺][A⁻]/[HA] at equilibrium."},
+ {s:"Physics",c:"Kinematics",q:"For constant acceleration, which equation relates final velocity v, initial velocity u, acceleration a and displacement s without time?",o:["v = u + at","s = vt","v² = u² + 2as","s = ut"],a:2,e:"The standard relation is v² − u² = 2as."},
+ {s:"Mathematics",c:"Probability",q:"A fair coin is tossed twice. What is the probability of getting exactly one head?",o:["1/4","1/2","3/4","1"],a:1,e:"Outcomes are HH, HT, TH, TT; two of four have exactly one head."}
+];
+let attempted=0,correct=0;
+function card(q,i){return `<article class="qcard"><span class="tag">${q.s}</span><span class="tag">${q.c}</span>${q.y?`<span class="tag">${q.y} · sample</span>`:""}<div class="question">${q.q}</div><div class="options">${q.o.map((x,j)=>`<button class="option" onclick="answer(this,${i},${j},'${q.e.replace(/'/g,"\\'")}')">${String.fromCharCode(65+j)}. ${x}</button>`).join("")}</div><div class="feedback" aria-live="polite"></div></article>`}
+function answer(btn,i,j,explain){let box=btn.closest('.qcard');if(box.dataset.done)return;box.dataset.done="1";attempted++;let q=window.currentList[i];let opts=box.querySelectorAll('.option');opts[q.a].classList.add('correct');if(j===q.a){correct++;box.querySelector('.feedback').textContent="Correct! "+explain}else{btn.classList.add('wrong');box.querySelector('.feedback').textContent="Not quite. "+explain}document.getElementById('score').textContent=`${correct} / ${attempted}`}
+function renderQuestions(){let s=document.getElementById('subject').value,y=document.getElementById('year').value,term=document.getElementById('search').value.toLowerCase();let list=qs.filter(q=>(s==="All subjects"||q.s===s)&&(y==="All years"||String(q.y)===y)&&(q.c+" "+q.q).toLowerCase().includes(term));window.currentList=list;document.getElementById('questions').innerHTML=list.length?list.map(card).join(""):'<div class="empty">No sample questions match those filters.</div>'}
+const weights={Physics:[["Modern Physics",5],["Electrostatics",4],["Current Electricity",4],["Optics",4],["Kinematics & Laws of Motion",3]],Chemistry:[["Chemical & Ionic Equilibrium",5],["Coordination Compounds",4],["Chemical Bonding",4],["Thermodynamics",4],["Organic reaction basics",4]],Mathematics:[["Matrices & Determinants",5],["Vector Algebra & 3D",5],["Limits & Continuity",4],["Integral Calculus",4],["Probability",3]]};
+function renderWeights(){let arr=weights[document.getElementById('weightSubject').value];document.getElementById('weights').innerHTML='<table><thead><tr><th>Chapter</th><th>Priority guide</th><th>Relative level</th></tr></thead><tbody>'+arr.map(([c,n])=>`<tr><td>${c}</td><td>${n}/5</td><td><div class="bar"><i style="width:${n*20}%"></i></div></td></tr>`).join("")+'</tbody></table>'}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));['practice','weightage','prediction','about'].forEach(id=>document.getElementById(id).classList.toggle('hidden',id!==b.dataset.tab))}));
+['subject','year','search'].forEach(id=>document.getElementById(id).addEventListener(id==='search'?'input':'change',renderQuestions));
+document.getElementById('weightSubject').addEventListener('change',renderWeights);
+window.currentList=qs;renderQuestions();renderWeights();window.currentList=pred;document.getElementById('predictions').innerHTML=pred.map(card).join("");window.currentList=qs;
+</script>
+<script>
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+}
+</script>
+</body></html>
